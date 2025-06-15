@@ -21,6 +21,8 @@ const eslintConfig = [
         'plugin:styled-components-a11y/recommended',
         'prettier'
     ),
+    
+    
 ];
 
 export default eslintConfig;

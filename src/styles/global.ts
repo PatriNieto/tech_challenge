@@ -7,7 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', ${robotoSans.variable}, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #f7f7f7;
+    background:rgb(0, 0, 0);
+    color: #ffffff;
   }
 
   :root {
