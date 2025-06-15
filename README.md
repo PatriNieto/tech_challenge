@@ -16,19 +16,23 @@ Una aplicación creada con Next.js, TypeScript y Styled Components para mostrar 
 
 ## Scripts disponibles
 
-npm run dev # Inicia la app en desarrollo
-npm run build # Compila el proyecto
-npm start # Ejecuta en modo producción
-npm test # Corre los tests
-npm run format # Formatea el código con Prettier
+```bash
+npm run dev       # Inicia la app en desarrollo
+npm run build     # Compila el proyecto
+npm start         # Ejecuta en modo producción
+npm test          # Corre los tests
+npm run format    # Formatea el código con Prettier
+```
 
-Variables de entorno
+## Variables de entorno
 
-Crea un archivo .env.local en la raíz del proyecto con el siguiente contenido:
+Crea un archivo `.env.local` en la raíz del proyecto con el siguiente contenido:
 
+```env
 TMDB_API_KEY=your_tmdb_api_key_here
+```
 
-Estructura del proyecto:
+## Estructura del proyecto
 
 ```
 ├── pages/
@@ -46,15 +50,15 @@ Estructura del proyecto:
 │   │   └── pages/
 │   │       └── MoviesListPage.tsx
 │   └── detail/
-|       └── components/
-|           └── BackButton/
-│               └── index.tsx
+│       └── components/
+│           └── BackButton/
+│               ├── index.tsx
 │               └── styles.ts
 │       └── pages/
-│           └── MovieDetailPage.tsx
-│           └── styles.ts
-|           └── __tests__/
-│                 └── MovieDetailPage.test.tsx
+│           ├── MovieDetailPage.tsx
+│           ├── styles.ts
+│           └── __tests__/
+│               └── MovieDetailPage.test.tsx
 ├── lib/
 │   └── apiClient.ts
 ├── styles/
@@ -65,40 +69,45 @@ Estructura del proyecto:
 └── ...
 ```
 
-Decisiones de diseño
-Styled Components con soporte para SSR.
+## Decisiones de diseño
 
-SSR con getServerSideProps para mejorar el SEO y evitar datos desactualizados.
+- Styled Components con soporte para SSR.
+- SSR con `getServerSideProps` para mejorar el SEO y evitar datos desactualizados.
+- Cliente Axios centralizado en `lib/apiClient.ts` con `baseURL` y API key.
+- Prettier y ESLint configurados para formateo automático.
+- Accesibilidad integrada mediante reglas aplicadas a componentes de estilo.
 
-Cliente Axios centralizado en lib/apiClient.ts con baseURL y API key.
+## Configuración recomendada para VSCode
 
-Prettier y ESLint configurados para formateo automático.
+Archivo `.vscode/settings.json`:
 
-Accesibilidad integrada mediante reglas aplicadas a componentes de estilo.
-
-Configuración recomendada para VSCode
-Archivo .vscode/settings.json:
-
-json
+```json
 {
-"editor.formatOnSave": true,
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-"editor.codeActionsOnSave": {
-"source.fixAll.eslint": true}
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
+```
 
-Extensiones recomendadas:
-ESLint
-Prettier – Code formatter
+### Extensiones recomendadas
 
-Testing
+- ESLint
+- Prettier – Code formatter
+
+## Testing
+
+```bash
 npm run test
+```
 
-Recursos
-https://nextjs.org/docs/pages/getting-started/installation
+## Recursos
 
-https://developer.themoviedb.org/reference/intro/login
+- https://nextjs.org/docs/pages/getting-started/installation
+- https://developer.themoviedb.org/reference/intro/login
 
-Autor
-Patricia Nieto
-GitHub: @PatriNieto
+## Autor
+
+**Patricia Nieto**  
+GitHub: [@PatriNieto](https://github.com/PatriNieto)
