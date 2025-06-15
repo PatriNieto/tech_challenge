@@ -1,53 +1,60 @@
 # Fruteka Tech Challenge
 
+![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
+
 Una aplicación creada con Next.js, TypeScript y Styled Components para mostrar una lista de películas usando la API de The Movie Database (TMDB).
 
 ## Tecnologías
 
-- ✅ Next.js con Turbopack
-- ✅ TypeScript
-- ✅ Styled Components (SSR)
-- ✅ Axios client
-- ✅ Server Side Rendering (`getServerSideProps`)
-- ✅ Jest + React Testing Library
+- Next.js con Turbopack
+- TypeScript
+- Styled Components con SSR
+- Axios
+- Server Side Rendering (getServerSideProps)
+- Jest + React Testing Library
+- Prettier + ESLint
 
-## Scripts
+## Scripts disponibles
 
-```bash
-npm run dev     # Inicia la app en desarrollo
-npm run build   # Compila el proyecto
-npm start       # Ejecuta producción
-npm test          # Corre los tests
-npm run format    # Formatea todo el código con Prettier
-```
+npm run dev # Inicia la app en desarrollo
+npm run build # Compila el proyecto
+npm start # Ejecuta en modo producción
+npm test # Corre los tests
+npm run format # Formatea el código con Prettier
 
-## Variables de Entorno
+Variables de entorno
 
-Crea un archivo `.env.local` con el contenido:
+Crea un archivo .env.local en la raíz del proyecto con el siguiente contenido:
 
-```
 TMDB_API_KEY=your_tmdb_api_key_here
-```
 
-## Estructura del Proyecto
+Estructura del proyecto:
 
 ```
 ├── pages/
 │   ├── index.tsx
-│   └── movie/[id].tsx
+│   └── movie/
+│       └── [id].tsx
 ├── features/
 │   ├── list/
 │   │   ├── components/
-│   │   │   ├── MovieCard/
-│   │   │   │   ├── index.tsx
-│   │   │   │   ├── styles.ts
-│   │   │   │   ├── __test__/
-│   │   │   │   │   ├── MovieCard.test.tsx
-│   │   ├── pages/
-│   │   │   ├── MoviesListPage.tsx/
-│   ├── detail/
-│   │   ├── pages/
-│   │   │   ├── MovieDetailPage.tsx/
+│   │   │   └── MovieCard/
+│   │   │       ├── index.tsx
+│   │   │       ├── styles.ts
+│   │   │       └── __tests__/
+│   │   │           └── MovieCard.test.tsx
+│   │   └── pages/
+│   │       └── MoviesListPage.tsx
+│   └── detail/
+|       └── components/
+|           └── BackButton/
+│               └── index.tsx
+│               └── styles.ts
+│       └── pages/
+│           └── MovieDetailPage.tsx
+│           └── styles.ts
+|           └── __tests__/
+│                 └── MovieDetailPage.test.tsx
 ├── lib/
 │   └── apiClient.ts
 ├── styles/
@@ -58,50 +65,40 @@ TMDB_API_KEY=your_tmdb_api_key_here
 └── ...
 ```
 
-## Decisiones de Diseño
+Decisiones de diseño
+Styled Components con soporte para SSR.
 
-- Uso de `styled-components` para estilos aislados y SSR
-- SSR con `getServerSideProps` para SEO y refresco de datos
-- Cliente Axios centralizado (`lib/apiClient.ts`) con baseURL y API key
-- Prettier y ESLint configurados para formateo automático al guardar (VSCode)
-- Accesibilidad integrada con reglas para styled-components
+SSR con getServerSideProps para mejorar el SEO y evitar datos desactualizados.
 
-## Formateo automático en VSCode
+Cliente Axios centralizado en lib/apiClient.ts con baseURL y API key.
 
-Para activar el formateo al guardar, asegúrate de tener en tu proyecto el archivo `.vscode/settings.json` con el siguiente contenido:
+Prettier y ESLint configurados para formateo automático.
 
-```json
+Accesibilidad integrada mediante reglas aplicadas a componentes de estilo.
+
+Configuración recomendada para VSCode
+Archivo .vscode/settings.json:
+
+json
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    }
+"editor.formatOnSave": true,
+"editor.defaultFormatter": "esbenp.prettier-vscode",
+"editor.codeActionsOnSave": {
+"source.fixAll.eslint": true}
 }
-```
 
-También asegúrate de tener instaladas las extensiones:
+Extensiones recomendadas:
+ESLint
+Prettier – Code formatter
 
-- ESLint
-- Prettier – Code formatter
+Testing
+npm run test
 
-## Links de utilidad
+Recursos
+https://nextjs.org/docs/pages/getting-started/installation
 
-- Next docs: https://nextjs.org/docs/pages/getting-started/installation
-- TMDB API docs: https://www.themoviedb.org/login?to=read_me&redirect_uri=/docs
+https://developer.themoviedb.org/reference/intro/login
 
-## TODOs
-
-- Optimizar imágenes con `next/image`
-- Incorporar diseño visual y adaptativo (mobile first y desktop) basado en los siguientes mockups:
-    - Mobile:
-      ![Mobile Mockup](https://github.com/Fruteka/tech-challenge/blob/main/assets/mobile_mockup.png)
-    - Desktop:
-      ![Desktop Mockup](https://github.com/Fruteka/tech-challenge/blob/main/assets/desktop_mockup.png)
-- Generar los test de MovieDetailPage.test.tsx
-
-## TODOS opcionales
-
-- Agregar paginación en listado
-- Implementar búsqueda
-- Añadir tests para el resto de componentes
+Autor
+Patricia Nieto
+GitHub: @PatriNieto
